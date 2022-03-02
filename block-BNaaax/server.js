@@ -1,2 +1,5 @@
+// console.log(__dirname, __filename);
+
 var path = require('path');
-console.log(\_\_dirname);
+var indexPath = path.join(__dirname, 'index.js');
+console.log(indexPath);
