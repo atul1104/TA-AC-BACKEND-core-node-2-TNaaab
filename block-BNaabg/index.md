@@ -1,6 +1,6 @@
 ## BLOCK-writeCode
 
-### Final project
+### Final project.
 
 Create a basic `USER CRUD application` using `fs` on a HTTP server where a user can be created and stored in a file, read, updated and should be deleted from the file, all controlled by a node server.
 
@@ -55,15 +55,15 @@ Entire code should look like:
 
 ```js
 // define a users directory at top where all users will be stored
-const userDir = __dirname + "/users/";
+const userDir = __dirname + '/users/';
 // OR using path module
 // make sure to require path module if using
-const userDir = path.join(__dirname, "users/");
+const userDir = path.join(__dirname, 'users/');
 
 // captured data in stringified JSON format
-var store = "some data here";
+var store = 'some data here';
 // check for post request coming on '/users'
-if (req.url === "/users" && req.method === "POST") {
+if (req.url === '/users' && req.method === 'POST') {
   // grab the username from store data
   var username = JSON.parse(store).username;
   // check whether this username exists in users directory or not
@@ -72,7 +72,7 @@ if (req.url === "/users" && req.method === "POST") {
 
   // wx flag ensures that given username.json should not already exist in users directory, therwise throws an error
 
-  fs.open(userDir + username + ".json", "wx", (err, fd) => {
+  fs.open(userDir + username + '.json', 'wx', (err, fd) => {
     // fd is pointing to newly created file inside users directory
     // once file is created, we can write content to file
     // since store has all the data of the user
@@ -100,7 +100,7 @@ In order to read a user, we need to pass a username whenever doing a request fro
 - recall the difference between `req.url` and `parsedUrl.pathname`
 
 ```js
-if (parsedUrl.pathname === "/users" && req.method === "GET") {
+if (parsedUrl.pathname === '/users' && req.method === 'GET') {
 }
 ```
 
